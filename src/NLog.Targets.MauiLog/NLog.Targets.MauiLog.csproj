@@ -27,18 +27,13 @@ See https://github.com/NLog/NLog.Targets.MauiLog for documentation of NLog targe
     <IsPublishable>false</IsPublishable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Nullable>enable</Nullable>
     <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
     <IsTrimmable>true</IsTrimmable>
-    <TrimMode>copyused</TrimMode>
+    <IsAotCompatible>true</IsAotCompatible>
     <CheckEolWorkloads>false</CheckEolWorkloads>
     <SingleProject>true</SingleProject>
   </PropertyGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="ILLink.Descriptors.xml">
-      <LogicalName>ILLink.Descriptors.xml</LogicalName>
-    </EmbeddedResource>
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="../../README.md" Pack="true" PackagePath="" />
@@ -65,7 +60,7 @@ See https://github.com/NLog/NLog.Targets.MauiLog for documentation of NLog targe
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NLog" Version="5.2.2" />
+    <PackageReference Include="NLog" Version="6.0.0-rc2" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
   </ItemGroup>
 
