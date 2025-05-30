@@ -27,7 +27,7 @@ namespace NLog.Targets.MauiLog
     internal static class MauiExceptions
     {
         // We'll route all unhandled exceptions through this one event.
-        public static event UnhandledExceptionEventHandler UnhandledException;
+        public static event UnhandledExceptionEventHandler? UnhandledException;
 
         static MauiExceptions()
         {
