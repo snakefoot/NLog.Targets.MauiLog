@@ -81,7 +81,10 @@ namespace NLog.Targets
                         throwable = Java.Lang.Throwable.FromException(aggregateException.Flatten());
                     }
                 }
-                throwable = Java.Lang.Throwable.FromException(logEvent.Exception);
+                else
+                {
+                    throwable = Java.Lang.Throwable.FromException(logEvent.Exception);
+                }
             }
 
             if (logEvent.Level == LogLevel.Trace)

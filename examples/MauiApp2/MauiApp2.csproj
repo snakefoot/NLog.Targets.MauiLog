@@ -21,6 +21,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<CheckEolWorkloads>false</CheckEolWorkloads>
 		<IsPackable>false</IsPackable>
+		<MauiEnableXamlCBindingWithSourceCompilation>true</MauiEnableXamlCBindingWithSourceCompilation>
 
 		<!-- Display name -->
 		<ApplicationTitle>MauiApp2</ApplicationTitle>
