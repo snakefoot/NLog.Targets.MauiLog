@@ -70,6 +70,17 @@ namespace NLog.Targets
             Java.Lang.Throwable? throwable = null;
             if (logEvent.Exception != null)
             {
+                if (logEvent.Exception is AggregateException aggregateException)
+                {
+                    if (aggregateException.InnerExceptions.Count == 1 && !(aggregateException.InnerExceptions[0] is AggregateException))
+                    {
+                        throwable = Java.Lang.Throwable.FromException(aggregateException.InnerExceptions[0]);
+                    }
+                    else
+                    {
+                        throwable = Java.Lang.Throwable.FromException(aggregateException.Flatten());
+                    }
+                }
                 throwable = Java.Lang.Throwable.FromException(logEvent.Exception);
             }
 
